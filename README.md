@@ -7,7 +7,11 @@ supplemented by the book *The Elements of Computing Systems*, written and taught
 Schocken.
 
 The Hack Assembler, written in Python, translates Hack assembly language from symbolic readable human language into 
-16-bit binary machine language. 
+16-bit binary machine language.
+
+## Nand to Tetris Project completion certificate
+
+![Coursera Certificate](Assets/nand2tetris_certificate.jpg "Nand to Tetris certificate")
 
 ## Table of Contents
 
