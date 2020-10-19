@@ -5,7 +5,8 @@ import re
 
 class Parser:
     """
-    Parser, derived from 'Parsericon', is a class that provides helper functions to match Hack syntax.
+    Parser, is a class that provides helper functions to parse the Hack syntax. More specifically, it provides matching
+    methods
     """
 
     @staticmethod
