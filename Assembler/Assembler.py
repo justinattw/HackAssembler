@@ -28,7 +28,7 @@ class Assembler:
         self.first_pass(file)
         file = self.second_pass(file)
         self.write_file(file, asm_infile)
-        print("The assembly was a success, thank you for using the Hack Assembler.")
+        print("Assembly completed.")
 
     def first_pass(self, file):
         """
@@ -150,7 +150,6 @@ class Assembler:
         :param out_line: the output 16-bit binary string to be returned
         :return: a 16-bit binary string representing the original assembly language C instruction
         """
-
         out_line += "111"  # C instructions begin with "111" in binary, then end with 'a' op code, comp, dest, jump.
 
         comp_code = Parser.parse_c_instruction_comp(line)

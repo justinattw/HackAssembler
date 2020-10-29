@@ -29,22 +29,23 @@ The Hack Assembler, written in Python, translates Hack assembly language from sy
 
 ## Description
 
-Assembler.hack takes a program source code file written in the Hack Assembly Language (see: intro section below), which 
-is a *.asm* text file, and then assembles it into binary machine code (Hack Machine Language). The assembled machine 
-code program is then written to a new *.hack* text file with the same name.
+Assembler.hack takes a program source code file written in the Hack Assembly Language (see: 
+[intro section](#intro-to-hack-assembly) below), which  is a *.asm* text file, and then assembles it into binary 
+machine code (Hack Machine Language). The assembled machine code program is then written to a new *.hack* text file 
+with the same name.
 
 The Assembling process is implemented in two passes. The first pass scans the whole program, registering the labels 
 only in the Symbol Table. The second pass scans the whole program again, registering all variables in the Symbol
 Table, substituting the symbols with their respective memory and/or instruction addresses from the Symbol Table,
 generating binary machine code and then writing the assembled machine code to the new *.hack* text file.
 
-Source code is organized into several components, the decisions for their names, interfaces and APIs were already 
-specified in the book as sort of a specification-implementation contract. All components of the Assembler reside in the
- **/Assembler** directory, as follows:
+Source code is organized into several components, the decisions for their names and interfaces are specified in 
+accordance to the Nand-to-Tetris Coursera programme. All components of the Assembler reside in the **/Assembler** 
+directory, as follows:
 
-1. **Assembler.py**: Main module. Implements the two passes and glues the other components together.
-2. **Parser.py**: Simple Parser. Parses the instructions by looking ahead 1 or 2 characters to determine their types 
-and structures.
+1. **Assembler.py**: Main module. Implements the two passes, making use o f the other three  classes.
+2. **Parser.py**: Parses lines of code to identify comments, whitespace, A-, L- and C- instructions, as well as parsing
+commands inside the instruction.
 3. **Code.py**: Generates binary machine code for instructions. For C-Instructions, it generates machine code for its 
 constituting parts and then merges them back altogether.
 4. **SymbolTable.py**: Implements a lookup table which is used to register symbols (labels and variables) and look up 
@@ -109,6 +110,11 @@ $ python Assembler.py Add.asm
 0000000000001110
 1110101010000111
 ```
+
+### .hack outputs
+
+Assembled .hack output files can be found in the `Assembler/out_hack/` directory.
+
 
 ## Intro to Hack Assembly
 
